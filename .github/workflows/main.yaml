@@ -1,0 +1,5 @@
+on:
+  push:
+    branch: ["main", "dev"]
+
+jobs:
