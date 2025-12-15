@@ -1,8 +1,11 @@
 import hardhatToolboxMochaEthersPlugin from "@nomicfoundation/hardhat-toolbox-mocha-ethers";
 import { configVariable, defineConfig } from "hardhat/config";
+import HardhatIgnitionEthersPlugin from "@nomicfoundation/hardhat-ignition-ethers";
+import hardhatIgnitionEthers from "@nomicfoundation/hardhat-ignition-ethers";
+
 
 export default defineConfig({
-	plugins: [hardhatToolboxMochaEthersPlugin],
+	plugins: [hardhatToolboxMochaEthersPlugin, HardhatIgnitionEthersPlugin,hardhatIgnitionEthers],
 	solidity: {
 		profiles: {
 			default: {
@@ -24,7 +27,14 @@ export default defineConfig({
 			type: "http",
 			chainId: 8453,
 			url: configVariable("BASE_RPC_URL"),
-			accounts: [configVariable("BASE_PRIVATE_KEY")]
+			accounts: [configVariable("BASE_NAME_WALLET_PRIVATE_KEY")]
+		},
+		baseFork: {
+			type: "edr-simulated",
+			forking: {
+				url:  configVariable("BASE_RPC_URL"),
+				blockNumber: 19000000
+			}
 		}
 	},
 	verify: {
