@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+	turbopack: {},
 	webpack(config) {
 		// Ignore any .mjs test files in thread-stream
 		config.module.rules.push({
