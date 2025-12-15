@@ -34,7 +34,7 @@ importers:
         version: 10.0.10
       '@types/node':
         specifier: ^22.8.5
-        version: 22.19.2
+        version: 22.19.3
       chai:
         specifier: ^5.1.2
         version: 5.3.3
@@ -504,8 +504,8 @@ packages:
   '@types/mocha@10.0.10':
     resolution: {integrity: sha512-xPyYSz1cMPnJQhl0CLMH68j3gprKZaTjG3s5Vi+fDgx+uhG9NOXwbVt52eFS8ECyXhyKcjDLCBEqBExKuiZb7Q==}
 
-  '@types/node@22.19.2':
-    resolution: {integrity: sha512-LPM2G3Syo1GLzXLGJAKdqoU35XvrWzGJ21/7sgZTUpbkBaOasTj8tjwn6w+hCkqaa1TfJ/w67rJSwYItlJ2mYw==}
+  '@types/node@22.19.3':
+    resolution: {integrity: sha512-1N9SBnWYOJTrNZCdh/yJE+t910Y128BoyY+zBLWhL3r0TYzlTmFdXrPwHL9DyFZmlEXNQQolTZh3KHV31QDhyA==}
 
   '@types/node@22.7.5':
     resolution: {integrity: sha512-jML7s2NAzMWc//QSJ1a3prpk78cOPchGvXJsC3C6R6PSMoooztvRVQEz89gmBTBY1SPMaqo5teB4uNHPdetShQ==}
@@ -718,8 +718,8 @@ packages:
     resolution: {integrity: sha512-U1wulmetNymijEhpSEQ7Ct/P/Jw9/e7R1j5XIbPRydgV2DjLVMsULDlNksq3RQnFgKoLlZf88ijYtWEXcPa07A==}
     engines: {node: '>=14.0.0'}
 
-  fast-equals@5.3.4:
-    resolution: {integrity: sha512-d+yU9iNQbbC098NOuMlAIth/g+owbpX/uuOkH/DQcC2fMMyjOlX292Op29DrUKq388m4UUyOdWakUH/msGypOg==}
+  fast-equals@5.4.0:
+    resolution: {integrity: sha512-jt2DW/aNFNwke7AUd+Z+e6pz39KO5rzdbbFCg2sGafS4mk13MI7Z8O5z9cADNn5lhGODIgLwug6TZO2ctf7kcw==}
     engines: {node: '>=6.0.0'}
 
   find-replace@3.0.0:
@@ -1599,7 +1599,7 @@ snapshots:
       debug: 4.4.3(supports-color@8.1.1)
       env-paths: 2.2.1
       ethereum-cryptography: 2.2.1
-      fast-equals: 5.3.4
+      fast-equals: 5.4.0
       json-stream-stringify: 3.1.6
       rfdc: 1.4.1
       undici: 6.22.0
@@ -1721,7 +1721,7 @@ snapshots:
 
   '@types/mocha@10.0.10': {}
 
-  '@types/node@22.19.2':
+  '@types/node@22.19.3':
     dependencies:
       undici-types: 6.21.0
 
@@ -1946,7 +1946,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  fast-equals@5.3.4: {}
+  fast-equals@5.4.0: {}
 
   find-replace@3.0.0:
     dependencies:

@@ -24,7 +24,7 @@ export default defineConfig({
 			type: "http",
 			chainId: 8453,
 			url: configVariable("BASE_RPC_URL"),
-			accounts: [configVariable("BASE_PRIVATE_KEY")]
+			accounts: [configVariable("BASE_NAME_WALLET_PRIVATE_KEY")]
 		}
 	},
 	verify: {
