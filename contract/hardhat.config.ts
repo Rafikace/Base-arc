@@ -25,6 +25,13 @@ export default defineConfig({
 			chainId: 8453,
 			url: configVariable("BASE_RPC_URL"),
 			accounts: [configVariable("BASE_NAME_WALLET_PRIVATE_KEY")]
+		},
+		baseFork: {
+			type: "edr-simulated",
+			forking: {
+				url:  configVariable("BASE_RPC_URL"),
+				blockNumber: 19000000
+			}
 		}
 	},
 	verify: {
