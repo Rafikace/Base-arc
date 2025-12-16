@@ -4,22 +4,32 @@ import BottomCard from "@/components/pong/Bottomcard";
 import { motion } from "framer-motion";
 import useConnect from "@/lib/hooks/useConnect";
 import { useAppKitAccount } from "@reown/appkit/react";
-    
+import { Hex } from "viem";
+import { toast } from "sonner";
+
 export default function PongPage() {
     const { connectFreeGame } = useConnect();
     const { address } = useAppKitAccount()
-    
-      const games = [
-          { texts: "Quick Match", gameType: "Free", action: function(){connectFreeGame(address)}},
-          { texts: "Create / Join", gameType: "Free", action: () => {} },
-          { texts: "Friendly Stake", gameType: "Stake", action: () => {} },
-        { texts: "Compete", gameType: "Stake", action: ()=> {} }
+
+    const games = [
+        {
+            texts: "Quick Match", gameType: "Free", action: function () {
+                if (!address) {
+                    toast.error("Plese connect our wallet")
+                    return;
+                }
+                connectFreeGame(address as Hex)
+            }
+        },
+        { texts: "Create / Join", gameType: "Free", action: () => { } },
+        { texts: "Friendly Stake", gameType: "Stake", action: () => { } },
+        { texts: "Compete", gameType: "Stake", action: () => { } }
     ];
 
     return (
         <main className="w-full">
             <Navbar />
-             <div className='pong_hero'>
+            <div className='pong_hero'>
                 <section>
                     {games.map((game, idx) => (
                         <motion.article key={idx}
@@ -28,7 +38,7 @@ export default function PongPage() {
                             whileHover={{ scale: [1.1, 1.3, 1.1] }}
                             onClick={game.action}
                         >
-                            <h6 className="text-gradient">{game.texts} <br/> ({game.gameType})</h6>
+                            <h6 className="text-gradient">{game.texts} <br /> ({game.gameType})</h6>
                         </motion.article>
                     ))}
                 </section>
