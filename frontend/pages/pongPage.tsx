@@ -3,12 +3,14 @@ import BoostPack from "@/components/pong/boostPack";
 import BottomCard from "@/components/pong/Bottomcard";
 import { motion } from "framer-motion";
 import useConnect from "@/lib/hooks/useConnect";
-
+import { useAppKitAccount } from "@reown/appkit/react";
     
 export default function PongPage() {
-    const { connectFreeGame } = useConnect()
+    const { connectFreeGame } = useConnect();
+    const { address } = useAppKitAccount()
+    
       const games = [
-          { texts: "Quick Match", gameType: "Free", action: connectFreeGame(address)},
+          { texts: "Quick Match", gameType: "Free", action: function(){connectFreeGame(address)}},
           { texts: "Create / Join", gameType: "Free", action: () => {} },
           { texts: "Friendly Stake", gameType: "Stake", action: () => {} },
         { texts: "Compete", gameType: "Stake", action: ()=> {} }
