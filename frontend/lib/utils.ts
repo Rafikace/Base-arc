@@ -8,20 +8,13 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-// export const config = getDefaultConfig({
-//   appName: 'My RainbowKit App',
-//   projectId: 'YOUR_PROJECT_ID',
-//   chains: [base, baseSepolia],
-//   ssr:true
-// })
-
 export const wagmiAdapter = new WagmiAdapter({
   storage: createStorage({
     storage: cookieStorage
   }),
   ssr: true,
-  projectId: "project id",
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
   networks: [base, baseSepolia]
 })
 
-export const config = wagmiAdapter.wagmiConfig
+export const config = wagmiAdapter.wagmiConfig;
