@@ -39,6 +39,60 @@ export default function Chess() {
                     Chess Board
                 </h1>
             </div>
+
+            <div className="aspect-square bg-blue-50 p-3 sm:p-4 md:p-6 rounded-lg shadow-2xl">
+                {/* Board Grid */}
+                <div className="w-full h-full grid grid-cols-8 gap-0 bg-white rounded-sm overflow-hidden shadow-inner">
+                    {board.map((row, rowIndex) =>
+                        row.map((piece, colIndex) => {
+                            // Alternating blue pattern
+                            const isLight = (rowIndex + colIndex) % 2 === 0;
+                            const fileLabel = String.fromCharCode(97 + colIndex);
+                            const rankLabel = 8 - rowIndex;
+                            const showFileLabel = rowIndex === 7;
+                            const showRankLabel = colIndex === 0;
+                            const isSelected = selectedSquare && selectedSquare[0] === rowIndex && selectedSquare[1] === colIndex;
+
+                            return (
+                                <button
+                                    key={`${rowIndex}-${colIndex}`}
+                                    onClick={() => handleSquareClick(rowIndex, colIndex)}
+                                    className={`relative aspect-square flex flex-col items-center justify-center transition-all duration-150 cursor-pointer hover:opacity-90 ${isLight
+                                            ? 'bg-blue-200'
+                                            : 'bg-blue-500'
+                                        } ${isSelected ? 'ring-4 ring-yellow-300 ring-inset' : ''}`}
+                                >
+                                    {/* Piece */}
+                                    {piece && (
+                                        <div className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-none drop-shadow-lg ${piece.color === 'white'
+                                                ? 'text-white'
+                                                : 'text-black'
+                                            }`}>
+                                            {pieceSymbols[piece.color][piece.type]}
+                                        </div>
+                                    )}
+
+                                    {/* File label (bottom) */}
+                                    {showFileLabel && (
+                                        <div className="absolute bottom-1 sm:bottom-1.5 right-1 sm:right-1.5 text-[10px] sm:text-xs font-bold text-blue-900 opacity-70">
+                                            {fileLabel}
+                                        </div>
+                                    )}
+
+                                    {/* Rank label (left) */}
+                                    {showRankLabel && (
+                                        <div className="absolute top-1 sm:top-1.5 left-1 sm:left-1.5 text-[10px] sm:text-xs font-bold text-blue-900 opacity-70">
+                                            {rankLabel}
+                                        </div>
+                                    )}
+                                </button>
+                            );
+                        })
+                    )}
+                </div>
+            </div>
+
+            
         </>
     )
 }
