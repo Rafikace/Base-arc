@@ -35,4 +35,22 @@ export const pieceSymbols = {
     knight: '♞',
     pawn: '♟',
   },
+};  
+export const initializeBoard = () => {
+  const board = Array(8)
+    .fill(null)
+    .map(() => Array(8).fill(null));
+
+  for (let i = 0; i < 8; i++) {
+    board[1][i] = { type: 'pawn', color: 'black' };
+    board[6][i] = { type: 'pawn', color: 'white' };
+  }
+
+  const setup = ['rook', 'knight', 'bishop', 'queen', 'king', 'bishop', 'knight', 'rook'];
+  for (let i = 0; i < 8; i++) {
+    board[0][i] = { type: setup[i], color: 'black' };
+    board[7][i] = { type: setup[i], color: 'white' };
+  }
+
+  return board;
 };
