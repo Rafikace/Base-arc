@@ -27,6 +27,10 @@ export default function Chess() {
         console.log(`Move from [${fromRow}, ${fromCol}] to [${toRow}, ${toCol}]`);
     };
 
+    const handleReset = () => {
+        console.log('Reset board');
+    };
+
 
     return (
         <>
