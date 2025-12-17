@@ -1,5 +1,5 @@
-on:
-  push:
-    branch: ["main", "dev"]
+# on:
+#   push:
+#     branch: ["main", "dev"]
 
-jobs:
+# jobs:    
