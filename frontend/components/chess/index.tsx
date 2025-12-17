@@ -35,8 +35,8 @@ export default function Chess() {
     return (
         <div className="min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-8">
             <div className="w-full max-w-3xl">
-                <div className="text-center mb-6 sm:mb-8">
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
+                <div className="text-center mb-6 sm:mb-8 bg-blue-300 rounded p-2">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 ribeye">                                                                                                                          
                         Chess Board
                     </h1>
                 </div>
