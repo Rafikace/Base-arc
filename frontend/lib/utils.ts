@@ -63,3 +63,5 @@ export const initializeBoard = () => {
 
 	return board;
 };
+
+export const PING_PONG_CONTRACT_ADDRESS = "0x9E2CE38C97020eda9F108ddeD27a43c9323C5434";
