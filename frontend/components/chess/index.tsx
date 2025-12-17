@@ -23,6 +23,11 @@ export default function Chess() {
         }
     };
 
+    const handleMakeMove = (fromRow, fromCol, toRow, toCol) => {
+        console.log(`Move from [${fromRow}, ${fromCol}] to [${toRow}, ${toCol}]`);
+    };
+
+
     return (
         <>
         </>
