@@ -58,15 +58,15 @@ export default function Chess() {
                                     key={`${rowIndex}-${colIndex}`}
                                     onClick={() => handleSquareClick(rowIndex, colIndex)}
                                     className={`relative aspect-square flex flex-col items-center justify-center transition-all duration-150 cursor-pointer hover:opacity-90 ${isLight
-                                            ? 'bg-blue-200'
-                                            : 'bg-blue-500'
+                                        ? 'bg-blue-200'
+                                        : 'bg-blue-500'
                                         } ${isSelected ? 'ring-4 ring-yellow-300 ring-inset' : ''}`}
                                 >
                                     {/* Piece */}
                                     {piece && (
                                         <div className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-none drop-shadow-lg ${piece.color === 'white'
-                                                ? 'text-white'
-                                                : 'text-black'
+                                            ? 'text-white'
+                                            : 'text-black'
                                             }`}>
                                             {pieceSymbols[piece.color][piece.type]}
                                         </div>
@@ -92,7 +92,14 @@ export default function Chess() {
                 </div>
             </div>
 
-            
+            <div className="mt-6 sm:mt-8 flex justify-center gap-4">
+                <button
+                    onClick={handleReset}
+                    className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200"
+                >
+                    Reset
+                </button>
+            </div>
         </>
     )
 }
