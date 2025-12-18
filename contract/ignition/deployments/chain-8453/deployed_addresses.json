@@ -1,4 +1,7 @@
 {
   "PingPongModule#PingPong": "0x9E2CE38C97020eda9F108ddeD27a43c9323C5434",
-  "CounterModule#Counter": "0x73961ABf30c6d7E71cd9E63F53e6abb7b49f3D43"
+  "CounterModule#Counter": "0x73961ABf30c6d7E71cd9E63F53e6abb7b49f3D43",
+  "CountingModule#Counting": "0x0d224673f269Ba983D7DAA9e7f5BD5885Ee6cA80",
+  "Counter1Module#Counter1": "0xEfc65d8EECC99a82aeb549EFf0B1A94819219ADb",
+  "Counter2Module#Counter2": "0x63063d66a3C532d5563148ABb82B9b8A9805A122"
 }
